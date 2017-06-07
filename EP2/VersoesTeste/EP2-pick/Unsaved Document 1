@@ -1,0 +1,83 @@
+         if(Math.abs(translation[0][3] + object.translation[0][3]) > 1 ||
+               Math.abs(translation[1][3] + object.translation[1][3]) > 1 ||
+               Math.abs(translation[2][3] + object.translation[2][3]) > 1){
+            if(this.axis == Key.X){
+               console.log(Math.abs(translation[0][3] + object.translation[0][3]));
+               object.translation = translate(1, object.translation[1][3], object.translation[2][3]);
+            }
+            if(this.axis == Key.X)
+               object.translation = translate(object.translation[0][3], 1, object.translation[2][3]);
+            if(this.axis == Key.X)
+               object.translation = translate(object.translation[0][3], object.translation[1][3], 1);
+         }else{
+            console.log(Math.abs(translation[0][3] + object.translation[0][3]));
+            object.translation = add(object.translation, translation);
+         }
+
+
+
+
+               var maxT;
+               var minT;
+               var xT = object.translation[0][3];
+               var yT = object.translation[1][3];
+               var zT = object.translation[2][3];
+
+               offset.x = 0;
+               offset.y = 0;
+               offset.z = 0;
+               if(xT > yT){
+                  if(xT > zT){
+                     maxT = xT;
+
+                     if(yT < zT)
+                        minT = yT
+                     else
+                        minT = zT
+                  } else {
+                     maxT = zT;
+                     
+                     if(yT < xT)
+                        minT = yT
+                     else
+                        minT = xT
+                  }
+               } else{
+                  if(yT > zT){
+                     maxT = yT;
+
+                     if(xT < zT)
+                        minT = xT
+                     else
+                        minT = zT
+                  } else{
+                     maxT = zT;
+
+                     if(yT < xT)
+                        minT = yT
+                     else
+                        minT = xT
+                  }
+               }
+
+               if(direction > 0){
+                  if(maxT == 1)
+                     delta = 0;
+                  else {
+                     if(Math.abs(minT) > Math.abs(maxT))
+                        delta = (1 - Math.abs(minT))/10;
+                     else
+                        delta = (1 - Math.abs(maxT))/10;
+                  }
+               }
+               else {
+                  if(minT == -1)
+                     delta = 0;
+                  else {
+                     if(Math.abs(minT) > Math.abs(maxT))
+                        delta = (Math.abs(minT) - 1)/10;
+                     else
+                        delta = (Math.abs(maxT) - 1)/10;
+                  }
+               }
+ 

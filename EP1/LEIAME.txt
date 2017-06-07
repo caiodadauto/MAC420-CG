@@ -1,0 +1,14 @@
+Nome: Caio Vinícius Dadauto
+Nusp: 7994808
+
+EP1 - Introdução à computação gráfica
+- Os arquivos necessitam de HTML5 e webGL > 2.
+- Os arquivos .obj a serem carregados são necessariamente 
+    escritos com no máximo espaços duplos e as faces devem ser no máximo quadradas.
+- O  programa gera o .obj carregado e alterna a superficie entre smooth shading ou flat shading.
+- O smooth shading utiliza de no  máximo 6 faces adjacentes a um dado vertice de forma a poupar
+    esforço computacional.
+- O canvas é redimensionavel.
+- Deve-se utilizar necessariamente o arquivo MV.js enviado junto ao EP, pois este está modificado,
+    de forma a possibilitar a utilização da função escala (scale(x, y, z)) com  parâmetros escalares.
+    Pois, no arquivo original formecido havia um erro.
